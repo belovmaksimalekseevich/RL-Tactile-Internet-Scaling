@@ -1,0 +1,92 @@
+<mxfile host="app.diagrams.net" type="device">
+  <diagram name="Architecture" id="arch1">
+    <mxGraphModel dx="1100" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="680" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="Channel-Aware Perceptual Sampling for Multi-User 6G Tactile-Internet Telepresence" style="text;html=1;align=center;verticalAlign=middle;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="10" width="1120" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ===== SUIT GROUP ===== -->
+        <mxCell id="bgSuit" value="Telepresence Suit&#10;(× M concurrent users)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontStyle=1;fontSize=13;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="40" y="55" width="340" height="565" as="geometry" />
+        </mxCell>
+        <mxCell id="body" value="Body IMUs&lt;br&gt;24 joints @ 60 Hz&lt;br&gt;&lt;i&gt;(eval: DIP-IMU dataset)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="70" y="100" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="hand" value="Hand CyberGlove-II&lt;br&gt;21 joints @ 100 Hz&lt;br&gt;&lt;i&gt;(eval: NinaPro DB9)&lt;/i&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="220" y="100" width="130" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="edge" value="On-board edge:  RPi4 + 5×ESP32" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="70" y="195" width="280" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="state" value="Per-joint state&lt;br&gt;δ · velocity · accel. · time-since&lt;br&gt;&lt;b&gt;congestion M&lt;/b&gt; · &lt;b&gt;latency headroom&lt;/b&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="70" y="270" width="280" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="agent" value="Channel-Aware RL Sampling Agent (PPO)&lt;br&gt;&lt;b&gt;send / skip&lt;/b&gt; decision per joint" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="70" y="365" width="280" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="pub" value="MQTT publish — only the joints sent" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="70" y="460" width="280" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="reward" value="Training reward:  − traffic  − JND violation  − latency-budget violation" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=none;strokeColor=#d79b00;fontStyle=2;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="70" y="535" width="280" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ===== SLICE GROUP ===== -->
+        <mxCell id="bgSlice" value="6G URLLC Tactile Slice (shared)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;fontStyle=1;fontSize=13;arcSize=6;" vertex="1" parent="1">
+          <mxGeometry x="450" y="150" width="300" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="queue" value="Shared M/D/1 queue&lt;br&gt;C = 8000 msg/s  (12.8 Mbit/s)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="475" y="205" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="share" value="Aggregate load = M · r&lt;br&gt;(mean-field: one shared policy)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="475" y="295" width="250" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="budget" value="E2E latency budget&lt;br&gt;&lt;b&gt;≤ 1 ms&lt;/b&gt;  ⟹  feasibility M* = ρ*C / r" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="475" y="380" width="250" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ===== RECEIVER GROUP ===== -->
+        <mxCell id="bgRecv" value="Receiver / Avatar Side" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;fontStyle=1;fontSize=13;arcSize=4;" vertex="1" parent="1">
+          <mxGeometry x="820" y="55" width="340" height="565" as="geometry" />
+        </mxCell>
+        <mxCell id="broker" value="MQTT Broker" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="850" y="115" width="280" height="45" as="geometry" />
+        </mxCell>
+        <mxCell id="recon" value="Zero-order-hold reconstruction&lt;br&gt;(hold last received angle)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="850" y="200" width="280" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="avatar" value="Avatar / Digital Twin&lt;br&gt;24 + 21 reconstructed joints" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="850" y="295" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dash" value="Dashboard / QoE monitor&lt;br&gt;RMSE vs JND · latency" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="850" y="400" width="280" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ===== EDGES inside suit ===== -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6c8ebf;" edge="1" parent="1" source="body" target="edge"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6c8ebf;" edge="1" parent="1" source="hand" target="edge"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6c8ebf;" edge="1" parent="1" source="edge" target="state"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6c8ebf;" edge="1" parent="1" source="state" target="agent"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6c8ebf;" edge="1" parent="1" source="agent" target="pub"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ===== EDGES inside receiver ===== -->
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#9673a6;" edge="1" parent="1" source="broker" target="recon"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#9673a6;" edge="1" parent="1" source="recon" target="avatar"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#9673a6;" edge="1" parent="1" source="avatar" target="dash"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ===== MAIN FLOW ===== -->
+        <mxCell id="up" value="MQTT uplink" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeWidth=2;strokeColor=#333333;fontStyle=1;" edge="1" parent="1" source="pub" target="queue"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="down" value="delivery ≤ 1 ms" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeWidth=2;strokeColor=#333333;fontStyle=1;" edge="1" parent="1" source="queue" target="broker"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ===== FEEDBACK LOOP (the key channel-aware link) ===== -->
+        <mxCell id="fb" value="congestion signal&#10;(M, latency headroom)" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;dashed=1;strokeWidth=2;strokeColor=#b85450;fontColor=#b85450;fontStyle=1;exitX=0;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="share" target="agent"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

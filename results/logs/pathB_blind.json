@@ -1,0 +1,182 @@
+[
+  {
+    "M": 1,
+    "scenario": "s2_blind",
+    "per_suit_rate": 118.1,
+    "rho": 0.0148,
+    "latency_ms": 0.2259,
+    "within_1ms": true,
+    "body": {
+      "n_sent": 134067,
+      "n_total": 2413536,
+      "reduction_pct": 94.45,
+      "rate_msg_s": 80.0,
+      "energy_uJ": 100554.83,
+      "rmse_mean_deg": 1.4741,
+      "rmse_max_deg": 4.2265,
+      "pct_above_jnd": 1.44,
+      "jnd_deg": 2.0
+    },
+    "hand": {
+      "n_sent": 76177,
+      "n_total": 4200000,
+      "reduction_pct": 98.19,
+      "rate_msg_s": 38.1,
+      "energy_uJ": 78088.5,
+      "rmse_mean_deg": 1.5021,
+      "rmse_max_deg": 5.0017,
+      "pct_above_jnd": 0.0,
+      "jnd_deg": 3.0
+    }
+  },
+  {
+    "M": 10,
+    "scenario": "s2_blind",
+    "per_suit_rate": 118.1,
+    "rho": 0.1476,
+    "latency_ms": 0.2358,
+    "within_1ms": true,
+    "body": {
+      "n_sent": 134067,
+      "n_total": 2413536,
+      "reduction_pct": 94.45,
+      "rate_msg_s": 80.0,
+      "energy_uJ": 100554.83,
+      "rmse_mean_deg": 1.4741,
+      "rmse_max_deg": 4.2265,
+      "pct_above_jnd": 1.44,
+      "jnd_deg": 2.0
+    },
+    "hand": {
+      "n_sent": 76177,
+      "n_total": 4200000,
+      "reduction_pct": 98.19,
+      "rate_msg_s": 38.1,
+      "energy_uJ": 78088.5,
+      "rmse_mean_deg": 1.5021,
+      "rmse_max_deg": 5.0017,
+      "pct_above_jnd": 0.0,
+      "jnd_deg": 3.0
+    }
+  },
+  {
+    "M": 20,
+    "scenario": "s2_blind",
+    "per_suit_rate": 118.1,
+    "rho": 0.2953,
+    "latency_ms": 0.2512,
+    "within_1ms": true,
+    "body": {
+      "n_sent": 134067,
+      "n_total": 2413536,
+      "reduction_pct": 94.45,
+      "rate_msg_s": 80.0,
+      "energy_uJ": 100554.83,
+      "rmse_mean_deg": 1.4741,
+      "rmse_max_deg": 4.2265,
+      "pct_above_jnd": 1.44,
+      "jnd_deg": 2.0
+    },
+    "hand": {
+      "n_sent": 76177,
+      "n_total": 4200000,
+      "reduction_pct": 98.19,
+      "rate_msg_s": 38.1,
+      "energy_uJ": 78088.5,
+      "rmse_mean_deg": 1.5021,
+      "rmse_max_deg": 5.0017,
+      "pct_above_jnd": 0.0,
+      "jnd_deg": 3.0
+    }
+  },
+  {
+    "M": 30,
+    "scenario": "s2_blind",
+    "per_suit_rate": 118.1,
+    "rho": 0.4429,
+    "latency_ms": 0.2747,
+    "within_1ms": true,
+    "body": {
+      "n_sent": 134067,
+      "n_total": 2413536,
+      "reduction_pct": 94.45,
+      "rate_msg_s": 80.0,
+      "energy_uJ": 100554.83,
+      "rmse_mean_deg": 1.4741,
+      "rmse_max_deg": 4.2265,
+      "pct_above_jnd": 1.44,
+      "jnd_deg": 2.0
+    },
+    "hand": {
+      "n_sent": 76177,
+      "n_total": 4200000,
+      "reduction_pct": 98.19,
+      "rate_msg_s": 38.1,
+      "energy_uJ": 78088.5,
+      "rmse_mean_deg": 1.5021,
+      "rmse_max_deg": 5.0017,
+      "pct_above_jnd": 0.0,
+      "jnd_deg": 3.0
+    }
+  },
+  {
+    "M": 40,
+    "scenario": "s2_blind",
+    "per_suit_rate": 118.1,
+    "rho": 0.5905,
+    "latency_ms": 0.3151,
+    "within_1ms": true,
+    "body": {
+      "n_sent": 134067,
+      "n_total": 2413536,
+      "reduction_pct": 94.45,
+      "rate_msg_s": 80.0,
+      "energy_uJ": 100554.83,
+      "rmse_mean_deg": 1.4741,
+      "rmse_max_deg": 4.2265,
+      "pct_above_jnd": 1.44,
+      "jnd_deg": 2.0
+    },
+    "hand": {
+      "n_sent": 76177,
+      "n_total": 4200000,
+      "reduction_pct": 98.19,
+      "rate_msg_s": 38.1,
+      "energy_uJ": 78088.5,
+      "rmse_mean_deg": 1.5021,
+      "rmse_max_deg": 5.0017,
+      "pct_above_jnd": 0.0,
+      "jnd_deg": 3.0
+    }
+  },
+  {
+    "M": 50,
+    "scenario": "s2_blind",
+    "per_suit_rate": 118.1,
+    "rho": 0.7381,
+    "latency_ms": 0.4012,
+    "within_1ms": true,
+    "body": {
+      "n_sent": 134067,
+      "n_total": 2413536,
+      "reduction_pct": 94.45,
+      "rate_msg_s": 80.0,
+      "energy_uJ": 100554.83,
+      "rmse_mean_deg": 1.4741,
+      "rmse_max_deg": 4.2265,
+      "pct_above_jnd": 1.44,
+      "jnd_deg": 2.0
+    },
+    "hand": {
+      "n_sent": 76177,
+      "n_total": 4200000,
+      "reduction_pct": 98.19,
+      "rate_msg_s": 38.1,
+      "energy_uJ": 78088.5,
+      "rmse_mean_deg": 1.5021,
+      "rmse_max_deg": 5.0017,
+      "pct_above_jnd": 0.0,
+      "jnd_deg": 3.0
+    }
+  }
+]
